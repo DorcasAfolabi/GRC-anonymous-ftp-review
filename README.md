@@ -1,7 +1,7 @@
 # GRC-anonymous-ftp-risk assessment
 GRC Anonymous FTP Risk Assessment
 
-Overview
+## Overview
 
 This project documents the assessment of an anonymous FTP login vulnerability within a controlled lab environment using Kali Linux and Metasploitable 2.
 
@@ -11,7 +11,7 @@ The objective of the exercise was to identify the risk associated with anonymous
 
 Lab Environment
 
-Component	                Description
+## Component	                Description
 Attacker Machine        	Kali Linux
 Target Machine	          Metasploitable 2
 Network Configuration   	Same Virtual Network
@@ -20,7 +20,7 @@ FTP Port	                TCP 21
 
 
 
-# Assessment Steps
+## Assessment Steps
 
 ## 1. Service Discovery
 
@@ -59,9 +59,9 @@ Evidence:
 
 
 
-# Finding
+## Finding
 
-## Finding ID
+### Finding ID
 
 GRC-FTP-001
 
@@ -69,7 +69,7 @@ GRC-FTP-001
 
 Anonymous FTP Authentication Enabled
 
-# Description
+## Description
 
 The FTP service allowed unauthenticated users to establish authenticated sessions using the username “anonymous” without requiring valid credentials.
 
