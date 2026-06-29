@@ -11,18 +11,18 @@ The objective of the exercise was to identify the risk associated with anonymous
 
 Lab Environment
 
-Component	Description
-Attacker Machine	Kali Linux
-Target Machine	Metasploitable 2
-Network Configuration	Same Virtual Network
-Service Tested	FTP
-FTP Port	TCP 21
+Component	                Description
+Attacker Machine        	Kali Linux
+Target Machine	          Metasploitable 2
+Network Configuration   	Same Virtual Network
+Service Tested          	FTP
+FTP Port	                TCP 21
 
 
 
-Assessment Steps
+# Assessment Steps
 
-1. Service Discovery
+## 1. Service Discovery
 
 An Nmap scan was performed against the target machine to identify exposed services and open ports.
 
@@ -32,7 +32,7 @@ Evidence:
 
 
 
-2. Authentication Assessment
+## 2. Authentication Assessment
 
 The FTP service was accessed using anonymous authentication.
 
@@ -46,7 +46,7 @@ Evidence:
 
 
 
-3. Authorization Assessment
+## 3. Authorization Assessment
 
 After successful authentication, directory enumeration was performed using the following commands:
 
@@ -59,17 +59,17 @@ Evidence:
 
 
 
-Finding
+# Finding
 
-Finding ID
+## Finding ID
 
 GRC-FTP-001
 
-Finding Title
+## Finding Title
 
 Anonymous FTP Authentication Enabled
 
-Description
+# Description
 
 The FTP service allowed unauthenticated users to establish authenticated sessions using the username “anonymous” without requiring valid credentials.
 
@@ -77,20 +77,20 @@ Although no files were exposed during testing, the configuration creates unneces
 
 
 
-Risk Assessment
+# Risk Assessment
 
-Category	Assessment
-Likelihood	High
-Impact	High
-Overall Risk Rating	High
+## Category	               Assessment
+Likelihood                	High
+Impact            	        High
+Overall Risk Rating	        High
 
-Justification
+## Justification
 
 Anonymous FTP access bypasses normal authentication controls and violates the principle of least privilege. Unauthorized users may gain access to internal resources without accountability or traceability.
 
 
 
-Compliance Impact
+# Compliance Impact
 
 The configuration conflicts with security requirements found in:
 
@@ -106,13 +106,13 @@ The following security principles are violated:
 
 
 
-Risk Statement
+## Risk Statement
 
 Unauthorized users may gain access to organizational FTP services through anonymous authentication, potentially resulting in unauthorized disclosure, modification, or misuse of organizational information assets.
 
-⸻
 
-Recommended Controls
+
+## Recommended Controls
 
 1. Disable anonymous FTP access.
 2. Replace FTP with SFTP where possible.
@@ -122,9 +122,9 @@ Recommended Controls
 6. Perform regular configuration reviews and audits.
 7. Enable centralized logging and monitoring.
 
-⸻
 
-Conclusion
+
+## Conclusion
 
 This assessment demonstrates how insecure service configurations can create governance, risk, and compliance concerns even when immediate exploitation is not observed.
 
